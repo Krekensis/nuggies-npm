@@ -63,7 +63,6 @@ module.exports.editButtons = async (client, data) => {
 module.exports.giveawayEmbed = async (client, { host, prize, endAfter, winners, requirements }) => {
 	const hostedBy = client.users.cache.get(host) || await client.users.fetch(host).catch(() => null);
 	let req = '';
-	const requirements = docs[i].requirements;
 	if(requirements.roles) req += `\n<a:og_wsparkle:946704428889669672> Role(s): ${requirements.roles.map(x => `<@&${x}>`).join(', ')}`;
 	if(requirements.amariweekly) req += `\n<a:og_wsparkle:946704428889669672> Weekly Amari: \`${requirements.amariweekly}\``;
 	if(requirements.amarilevel) req += `\n<a:og_wsparkle:946704428889669672> Amari Level: \`${requirements.amarilevel}\``;
