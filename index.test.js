@@ -55,9 +55,7 @@ bot.on('messageCreate', async (message) => {
 			endAfter: '30s',
 			requirements: {
 				enabled: true,
-				amariweekly: '1',
-				amarilevel: '100',
-				key: '754a65c02c176511a5577711.7e61ad.4d1c0a710b5add7b8e2b21da161',
+				roles:['946653165305098251']
 			},
 			channelID: message.channel.id,
 		});

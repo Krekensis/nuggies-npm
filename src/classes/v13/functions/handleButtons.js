@@ -27,8 +27,7 @@ const defaultGiveawayMessages = {
 	noWinner: 'Not enough people participated in this giveaway.', // no {winner} placerholder
 	alreadyEnded: 'The giveaway has already ended!', // no {winner} placeholder
 	dropWin: '{winner} Won The Drop!!', // only {winner} placeholder
-};
-
+}
 module.exports = async (client, button) => {
 	if (!button.guild) return;
 	if (!client.customMessages || !client.customMessages.buttonRolesMessages) {
@@ -48,7 +47,8 @@ module.exports = async (client, button) => {
 				if(data.requirements.amariweekly || data.requirements.amarilevel) amaridata = await utils.getAmariData(data.requirements.key, button.user.id, button.guild.id);
 				if(data.requirements.roles) {
 					const roles = data.requirements.roles.map(x => button.message.guild.members.cache.get(button.user.id).roles.cache.get(x));
-					if (!roles[0] && button.message.roles.cache.some(e=> e.id == '954013633711583262')) {
+					console.log(roles)
+					if (!roles[0] && button.message.member.roles.cache.some(e=> e.id == '954013633711583262')) {
 						const requiredRoles = button.message.guild.roles.cache.filter(x => data.requirements.roles.includes(x.id)).filter(x => !button.message.guild.members.cache.get(button.user.id).roles.cache.get(x.id)).map(x => `\`${x.name}\``).join(', ');
 						return button.reply({ content: client.customMessages.giveawayMessages.nonoRole.replace(/{requiredRoles}/g, requiredRoles), ephemeral : true });
 					}
