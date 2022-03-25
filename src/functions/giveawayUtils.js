@@ -66,6 +66,7 @@ module.exports.giveawayEmbed = async (client, { host, prize, endAfter, winners, 
 	if(requirements.roles) req += `\n<a:og_wsparkle:946704428889669672> Role(s): ${requirements.roles.map(x => `<@&${x}>`).join(', ')}`;
 	if(requirements.amariweekly) req += `\n<a:og_wsparkle:946704428889669672> Weekly Amari: \`${requirements.amariweekly}\``;
 	if(requirements.amarilevel) req += `\n<a:og_wsparkle:946704428889669672> Amari Level: \`${requirements.amarilevel}\``;
+	if(req) req = req + '\n<a:og_wsparkle:946704428889669672> Bypass roles: <@&853152861746364448>,<@&860477070403305493>,<@&858901404507963403>'
 	if(!req) req = '\`None\`';
 	const embed = new Discord.MessageEmbed()
 		//.setTitle('Giveaway! 🎉')
