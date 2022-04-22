@@ -49,7 +49,7 @@ module.exports = async (client, button) => {
 					const roles = data.requirements.roles.map(x => button.message.guild.members.cache.get(button.user.id).roles.cache.get(x));
 					if (!roles[0] && !button.message.guild.members.cache
 						.get(button.user.id)
-						.roles.cache.some(e=> e.id == '860477070403305493') && !button.message.guild.members.cache
+						.roles.cache.some(e=> e.id == '858901404507963403') && !button.message.guild.members.cache
 						.get(button.user.id)
 						.roles.cache.some(e=> e.id == '853152861746364448') && !button.message.guild.members.cache
 						.get(button.user.id)
