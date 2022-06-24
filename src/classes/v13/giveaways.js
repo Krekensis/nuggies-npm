@@ -239,7 +239,7 @@ class Giveaways {
 					if(!req) req = '\`None\`';
                     embed.color = "WHITE"
 					embed.description = `${client.customMessages.giveawayMessages.toParticipate}\n${(client.customMessages.giveawayMessages.giveawayDescription).replace(/{requirements}/g, req).replace(/{hostedBy}/g, `<@!${docs[i].host}>`).replace(/{prize}/g, docs[i].prize).replace(/{winners}/g, docs[i].winners).replace(/{totalParticipants}/g, docs[i].clickers.length.toString())}`;
-					msg.edit({ embeds: [embed] });
+					msg.edit({ embeds: [embed] }).catch(e=> {});
 				}
 			}, 10 * 1000);
 		}
